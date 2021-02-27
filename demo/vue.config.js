@@ -1,3 +1,3 @@
 module.exports = {
-  outputDir: '../demo-dist'
+  outputDir: '../docs'
 }
