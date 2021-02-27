@@ -1,11 +1,10 @@
-// import { ScrollSpyElement, DefaultOptions } from './ScrollSpy'
-import { ScrollSpy } from './typings/typings.d'
+import { DefaultOptions, ScrollSpyElement } from './typings'
 import { DirectiveBinding } from 'vue'
 import { getOffsetTop, scrollSpyId, scrollSpyIdFromAncestors } from './utils'
-import { scrollWithAnimation } from './animate'
+import { scrollWithAnimation, Easing } from './animate'
 import { App } from 'vue'
 
-const defaults: ScrollSpy.DefaultOptions = {
+const defaults: DefaultOptions = {
   /**
    * allow no active sections when scroll position is outside
    * of the scroll-spy container. Default behavior is too keep
@@ -33,11 +32,12 @@ const defaults: ScrollSpy.DefaultOptions = {
   }
 }
 
-export const registerScrollSpy = (
-  App: App,
-  options: { [key: string]: any } = {}
+const registerScrollSpy = (
+  app: App,
+  options?: { [key: string]: any }
 ): void => {
-  options = Object.assign({}, defaults, options)
+  /** Directive options */
+  const defaultOptions = Object.assign({}, defaults, options || {})
 
   /**
    * Defining bodyScrollEl properties base on browsers like FF, ie
@@ -64,14 +64,15 @@ export const registerScrollSpy = (
       return window.innerHeight
     }
   })
+
   const scrollSpyContext = '@@scrollSpyContext'
-  const scrollSpyElements: { [key: string]: ScrollSpy.ScrollSpyElement } = {}
+  const scrollSpyElements: { [key: string]: ScrollSpyElement } = {}
   const scrollSpySections: { [key: string]: HTMLCollection | Element[] } = {}
-  const activeElement: { [key: string]: ScrollSpy.ScrollSpyElement } = {}
-  const canActiveElements: { [key: string]: ScrollSpy.ScrollSpyElement[] } = {}
+  const activeElement: { [key: string]: ScrollSpyElement } = {}
+  const canActiveElements: { [key: string]: ScrollSpyElement[] } = {}
   const currentIndex: { [key: string]: number | null } = {}
 
-  App.directive('scroll-spy', {
+  app.directive('scroll-spy', {
     created(el, binding) {
       /** onScroll event handler of an Element */
       const onScroll = () => {
@@ -149,7 +150,7 @@ export const registerScrollSpy = (
 
       el[scrollSpyContext] = {
         onScroll,
-        options: Object.assign({}, options, binding.value),
+        options: Object.assign({}, defaultOptions, binding.value),
         id: scrollSpyId(el),
         eventEl: el,
         scrollEl: el
@@ -169,7 +170,11 @@ export const registerScrollSpy = (
       onScroll()
     },
     updated(el, binding) {
-      el[scrollSpyContext].options = Object.assign({}, options, binding.value)
+      el[scrollSpyContext].options = Object.assign(
+        {},
+        defaultOptions,
+        binding.value
+      )
 
       const {
         onScroll,
@@ -185,18 +190,18 @@ export const registerScrollSpy = (
     }
   })
 
-  App.directive('scroll-spy-active', {
+  app.directive('scroll-spy-active', {
     created: scrollSpyActive,
     updated: scrollSpyActive
   })
 
-  App.directive('scroll-spy-link', {
+  app.directive('scroll-spy-link', {
     mounted: function (el, binding) {
-      const linkOptions = Object.assign({}, options.link, binding.value)
+      const linkOptions = Object.assign({}, defaultOptions.link, binding.value)
       initScrollLink(el, linkOptions.selector)
     },
     updated: function (el, binding) {
-      const linkOptions = Object.assign({}, options.link, binding.value)
+      const linkOptions = Object.assign({}, defaultOptions.link, binding.value)
       initScrollLink(el, linkOptions.selector)
     },
     unmounted(el) {
@@ -271,14 +276,25 @@ export const registerScrollSpy = (
 
   /** Generating elements that can apply active classes */
   function scrollSpyActive(
-    el: ScrollSpy.ScrollSpyElement,
+    el: ScrollSpyElement,
     binding: DirectiveBinding
   ): void {
     const id = scrollSpyId(el)
-    const activeOptions = Object.assign({}, options, binding.value)
+    const activeOptions = Object.assign({}, defaultOptions, {
+      active: {
+        selector:
+          binding.value && binding.value.selector
+            ? binding.value.selector
+            : defaultOptions.active.selector,
+        class:
+          binding.value && binding.value.class
+            ? binding.value.class
+            : defaultOptions.active.class
+      }
+    })
     const arr = [...findElements(el, activeOptions.active.selector)]
 
-    canActiveElements[id] = arr.map((el: ScrollSpy.ScrollSpyElement) => {
+    canActiveElements[id] = arr.map((el: ScrollSpyElement) => {
       el[scrollSpyContext].options = activeOptions
       return el
     })
@@ -330,13 +346,13 @@ export const registerScrollSpy = (
     return elements
   }
 
-  function initScrollSpyElement(el: any): ScrollSpy.ScrollSpyElement {
+  function initScrollSpyElement(el: any): ScrollSpyElement {
     const onScroll = () => {
       return
     }
     el[scrollSpyContext] = {
       onScroll,
-      options: options,
+      options: defaultOptions,
       id: '',
       eventEl: el,
       scrollEl: el
@@ -344,3 +360,5 @@ export const registerScrollSpy = (
     return el
   }
 }
+
+export { Easing, registerScrollSpy }

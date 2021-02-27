@@ -33,11 +33,10 @@
 
 </div>
 
-# Installation
+## Installation
 
 ```bash
 npm i vue3-scrollspy -S
-
 ```
 
 OR
@@ -46,15 +45,15 @@ OR
 yarn add vue3-scrollspy
 ```
 
-# Usage
+## Usage
 
-## Support
+### Support
 
 | Supported Package | Version |
 | ----------------- | ------- |
 | Vue               | 3+      |
 
-## Install Directive
+### Install Directive
 
 ```javascript
 // global register at main.js
@@ -70,7 +69,7 @@ registerScrollSpy(app, options)
 app.mount('#app')
 ```
 
-## On template
+### On template
 
 ```html
 <ul v-scroll-spy-active v-scroll-spy-link>
@@ -94,9 +93,9 @@ app.mount('#app')
 </div>
 ```
 
-# Configuration
+## Configuration
 
-## v-scroll-spy
+### v-scroll-spy
 
 Binding scroll-spy to sections (or elements) of a container.
 
@@ -106,7 +105,7 @@ Binding scroll-spy to sections (or elements) of a container.
 | `v-scroll-spy="{offset: 50}"`           | TAdding offset to scroll and active elements.                                   | Default: `0`                               |
 | `v-scroll-spy="{time: 200, steps: 30}"` | Set the animation options, time is animation duration, steps is step per frame. | `{time: 200, steps: 30}`                   |
 
-## v-scroll-spy-active
+### v-scroll-spy-active
 
 Setting active elements' `selector` and `class` properties.
 
@@ -114,20 +113,35 @@ Setting active elements' `selector` and `class` properties.
 | -------------------------------------------------------------------------- | ------------------------------------------- | ----------------------------------- |
 | `v-scroll-spy-active="{selector: 'li.menu-item', class: 'custom-active'}"` | Customize elements selector and class name. | `{selector: null, class: 'active'}` |
 
-## v-scroll-spy-link
+### v-scroll-spy-link
 
 Add `click handler` on children elements allow scrolling to the related section.
 
-| Directive name                                  | Description                                 | Default                             |
-| ----------------------------------------------- | ------------------------------------------- | ----------------------------------- |
-| `v-scroll-spy-link="{selector: 'a.menu-link'}"` | Customize elements selector and class name. | `{selector: null, class: 'active'}` |
+| Directive name                                  | Description                    | Default                             |
+| ----------------------------------------------- | ------------------------------ | ----------------------------------- |
+| `v-scroll-spy-link="{selector: 'a.menu-link'}"` | Customize menu links selector. | `{selector: null, class: 'active'}` |
 
-# Note
+### Bezier animations
+
+```javascript
+import { registerScrollSpy, Easing } from '@/directives/ScrollSpy'
+
+const app = createApp(App)
+
+// or custom global options
+registerScrollSpy(app, {
+  easing: Easing.Cubic.In
+})
+
+app.mount('#app')
+```
+
+## Note
 
 - You should have the same number of children elements for `v-scroll-spy`, `v-scroll-spy-active`, `v-scroll-spy-link` for this directive to work correctly.
 - If you need to share this scroll-spy directive on multiple containers, you can add `data-scroll-spy-id=""` on each element container, where this directive is bind.
 
-## Nested sections
+### Nested sections
 
 Vue3 Scroll-Spy also support multi-leveled sections:
 
@@ -147,6 +161,6 @@ Vue3 Scroll-Spy also support multi-leveled sections:
 </ol>
 ```
 
-# Liscense
+## Liscense
 
 MIT License
