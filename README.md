@@ -7,42 +7,39 @@
   —— Made with ❤️ by <a href="https://github.com/TriDiamond">TriDiamond</a></p>
 
   <p align="center">
-    <a href="https://circleci.com/gh/TriDiamond/vue3-scrollspy/tree/master">
-      <img src="https://img.shields.io/circleci/project/github/TriDiamond/vue3-scrollspy.svg" alt="Build Status">
-    </a>
-    <a href="https://github.com/TriDiamond/vue3-scrollspy/stargazers">
-      <img src="https://img.shields.io/github/stars/TriDiamond/vue3-scrollspy.svg" alt="Github starts">
+    <a href="https://github.com/TriDiamond/vue3-scroll-spy/stargazers">
+      <img src="https://img.shields.io/github/stars/TriDiamond/vue3-scroll-spy.svg" alt="Github starts">
     </a>
     <a>
-      <img src="https://img.shields.io/github/license/TriDiamond/vue3-scrollspy.svg" alt="License">
+      <img src="https://img.shields.io/github/license/TriDiamond/vue3-scroll-spy.svg" alt="License">
     </a>
-    <a href="https://www.npmjs.com/package/vue3-scrollspy">
-      <img src="https://img.shields.io/npm/dt/vue3-scrollspy.svg" alt="Npm downloads">
+    <a href="https://www.npmjs.com/package/vue3-scroll-spy">
+      <img src="https://img.shields.io/npm/dt/vue3-scroll-spy.svg" alt="Npm downloads">
     </a>
-    <a href="https://www.npmjs.com/package/vue3-scrollspy">
-      <img src="https://img.shields.io/bundlephobia/minzip/vue3-scrollspy.svg" alt="npm bundle size (minified + gzip)">
+    <a href="https://www.npmjs.com/package/vue3-scroll-spy">
+      <img src="https://img.shields.io/bundlephobia/minzip/vue3-scroll-spy.svg" alt="npm bundle size (minified + gzip)">
     </a>
     <a>
-      <img src="https://img.shields.io/npm/v/vue3-scrollspy.svg" alt="Npm version">
+      <img src="https://img.shields.io/npm/v/vue3-scroll-spy.svg" alt="Npm version">
     </a>
   </p>
 
-[Demo](https://tridiamond.github.io/vue3-scrollspy/)
-[｜ 📙 中文文档](https://github.com/TriDiamond/vue3-scrollspy/blob/master/README_CN.md)
-[｜ 📙 Changelog](https://github.com/TriDiamond/vue3-scrollspy/blob/master/CHANGELOG.md)
+[Demo](https://tridiamond.github.io/vue3-scroll-spy/)
+[｜ 📙 中文文档](https://github.com/TriDiamond/vue3-scroll-spy/blob/master/README_CN.md)
+[｜ 📙 Changelog](https://github.com/TriDiamond/vue3-scroll-spy/blob/master/CHANGELOG.md)
 
 </div>
 
 ## Installation
 
 ```bash
-npm i vue3-scrollspy -S
+npm i vue3-scroll-spy -S
 ```
 
 OR
 
 ```bash
-yarn add vue3-scrollspy
+yarn add vue3-scroll-spy
 ```
 
 ## Usage

@@ -1,6 +1,6 @@
 {
   "name": "vue3-scroll-spy",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/TriDiamond/vue3-scroll-spy.git",
