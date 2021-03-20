@@ -9213,10 +9213,10 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha1-HuO8mhbsv1EYvjNLsV+cRvgvWCU=
 
-vue3-scroll-spy@^1.0.3:
-  version "1.0.5"
-  resolved "https://registry.npmjs.org/vue3-scroll-spy/-/vue3-scroll-spy-1.0.5.tgz#ce64225ba906f1f465480347a28c88a771b9d1cd"
-  integrity sha512-R4J2P2Tvh0DQcANv1F2zJAlQAHals9pFVnqS8V8yeQ3/Ta/KoHkUbGZ5LdKF7IVGc60bbKGZnRU09iV+2W9R5w==
+vue3-scroll-spy@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.npmjs.org/vue3-scroll-spy/-/vue3-scroll-spy-1.0.6.tgz#876c26cce3b7f1129e67c7cadfdd4f26f0fe96a2"
+  integrity sha512-NjYzmT6b/bmMXNYgi0+GXbVBWV0Guy8oytjBoqqgSiouDbRc6Ao7JEB/tn/ZttZLjd5R4QStUqE9naFbcTtkyw==
   dependencies:
     "@tweenjs/tween.js" "^18.6.4"
     vue "^3.0.6"

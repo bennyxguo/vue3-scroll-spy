@@ -261,16 +261,30 @@ const registerScrollSpy = (
         return
       }
 
-      const time = options.time
-      const steps = options.steps
-      const timeMs = parseInt(time) / parseInt(steps)
-      const gap = target - current
-      for (let i = 0; i <= steps; i++) {
-        const pos = current + (gap / steps) * i
-        setTimeout(() => {
-          scrollEl.scrollTop = pos
-        }, timeMs * i)
+      const ua = window.navigator.userAgent
+      const msie = ua.indexOf('MSIE ')
+
+      // If current browser is internet explorer.
+      if (msie > 0) {
+        const time = options.time
+        const steps = options.steps
+        const timeMs = parseInt(time) / parseInt(steps)
+        const gap = target - current
+        for (let i = 0; i <= steps; i++) {
+          const pos = current + (gap / steps) * i
+          setTimeout(() => {
+            scrollEl.scrollTop = pos
+          }, timeMs * i)
+        }
+        return
       }
+
+      // Use window.scrollTo instead of moving by steps.
+      // Beware Internet Explorer does not support this.
+      window.scrollTo({
+        top: target,
+        behavior: 'smooth'
+      })
     }
   }
 

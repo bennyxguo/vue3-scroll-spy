@@ -2,6 +2,7 @@
 node_modules
 docs
 build
+demo
 
 # config files
 .eslintignore
