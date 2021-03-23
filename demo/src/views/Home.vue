@@ -6,11 +6,9 @@
         v-scroll-spy-active="{ class: 'customActive' }"
         v-scroll-spy-link
       >
-        <div id="sidebar-id">
-          <li :key="item" v-for="item in titles" class="menu-item">
-            <a :href="path + '#' + item">{{ item }}</a>
-          </li>
-        </div>
+        <li :key="item" v-for="item in titles" class="menu-item">
+          <a>{{ item }}</a>
+        </li>
       </ul>
     </div>
     <div class="title">
@@ -19,7 +17,7 @@
 
     <div class="main" v-scroll-spy>
       <div>
-        <h1 id="#Ludwig van Beethoven">Ludwig van Beethoven</h1>
+        <h1>Ludwig van Beethoven</h1>
         <p>
           (Listeni/ˈlʊdvɪɡ væn ˈbeɪˌtoʊvən/, /ˈbeɪtˌhoʊvən/; German: [ˈluːtvɪç
           fan ˈbeːtˌhoˑfn̩] ( listen); baptised 17 December 1770[1] – 26 March
@@ -43,7 +41,7 @@
         </p>
       </div>
       <div>
-        <h1 id="#Biography">Biography</h1>
+        <h1>Biography</h1>
         <p>
           Beethoven was the grandson of Ludwig van Beethoven (1712–73), a
           musician from the town of Mechelen in the Duchy of Brabant in the
@@ -102,9 +100,7 @@
         </p>
       </div>
       <div>
-        <h1 id="#Personal and family difficulties">
-          Personal and family difficulties
-        </h1>
+        <h1>Personal and family difficulties</h1>
         <p>
           Beethoven's love life was hampered by class issues. In late 1801 he
           met a young countess, Julie ("Giulietta") Guicciardi through the
@@ -186,9 +182,7 @@ export default defineComponent({
       'Personal and family difficulties'
     ]
 
-    const path = window.location.href
-
-    return { titles, path }
+    return { titles }
   }
 })
 </script>
