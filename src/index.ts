@@ -220,7 +220,8 @@ const registerScrollSpy = (
     }
   })
 
-  function scrollLinkClickHandler(index: any, scrollSpyId: any) {
+  function scrollLinkClickHandler(index: any, scrollSpyId: any, event: any) {
+    event.preventDefault()
     scrollTo(scrollSpyElements[scrollSpyId], index)
   }
 
