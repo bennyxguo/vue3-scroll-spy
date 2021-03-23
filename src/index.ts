@@ -118,7 +118,10 @@ const registerScrollSpy = (
           }
         }
 
-        if (index !== currentIndex[id]) {
+        if (
+          (!options.allowNoActive && index === 0) ||
+          index !== currentIndex[id]
+        ) {
           let idActiveElement = activeElement[id]
           if (idActiveElement) {
             idActiveElement.classList.remove(
