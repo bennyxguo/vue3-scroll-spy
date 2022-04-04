@@ -1,17 +1,17 @@
-<p align="center"><a href="https://tridiamond.tech" target="_blank" rel="noopener noreferrer"><img width="100" src="https://img-blog.csdnimg.cn/20200930013332450.png" alt="TriDiamond logo"></a></p>
+<p align="center"><a href="https://bennyxguo.me" target="_blank" rel="noopener noreferrer"><img width="100" src="https://img-blog.csdnimg.cn/20200930013332450.png" alt="bennyxguo logo"></a></p>
 
 <h1 align="center">Vue3 Scroll-Spy Directive</h1>
 
 <div align="center">
   <p>Scrollspy and animated scroll-to for Vue3, inspired by <a href="https://github.com/ibufu/vue2-scrollspy">vue2-scrollspy</a>. <br>
-  —— Made with ❤️ by <a href="https://github.com/TriDiamond">TriDiamond</a></p>
+  —— Made with ❤️ by <a href="https://github.com/bennyxguo">Benny Guo</a></p>
 
   <p align="center">
-    <a href="https://github.com/TriDiamond/vue3-scroll-spy/stargazers">
-      <img src="https://img.shields.io/github/stars/TriDiamond/vue3-scroll-spy.svg" alt="Github starts">
+    <a href="https://github.com/bennyxguo/vue3-scroll-spy/stargazers">
+      <img src="https://img.shields.io/github/stars/bennyxguo/vue3-scroll-spy.svg" alt="Github starts">
     </a>
     <a>
-      <img src="https://img.shields.io/github/license/TriDiamond/vue3-scroll-spy.svg" alt="License">
+      <img src="https://img.shields.io/github/license/bennyxguo/vue3-scroll-spy.svg" alt="License">
     </a>
     <a href="https://www.npmjs.com/package/vue3-scroll-spy">
       <img src="https://img.shields.io/npm/dt/vue3-scroll-spy.svg" alt="Npm downloads">
@@ -24,9 +24,8 @@
     </a>
   </p>
 
-[Demo](https://tridiamond.github.io/vue3-scroll-spy/)
-[｜ 📙 中文文档](https://github.com/TriDiamond/vue3-scroll-spy/blob/master/README_CN.md)
-[｜ 📙 Changelog](https://github.com/TriDiamond/vue3-scroll-spy/blob/master/CHANGELOG.md)
+[｜ 📙 中文文档](https://github.com/bennyxguo/vue3-scroll-spy/blob/master/README_CN.md)
+[｜ 📙 Changelog](https://github.com/bennyxguo/vue3-scroll-spy/blob/master/CHANGELOG.md)
 
 </div>
 
