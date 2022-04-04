@@ -54,7 +54,7 @@ yarn add vue3-scroll-spy
 
 ```javascript
 // global register at main.js
-import { registerScrollSpy } from '@/directives/ScrollSpy'
+import { registerScrollSpy } from 'vue3-scroll-spy';
 
 const app = createApp(App)
 // Using default options
