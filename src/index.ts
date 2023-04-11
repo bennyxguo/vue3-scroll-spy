@@ -190,12 +190,18 @@ const registerScrollSpy = (
     unmounted(el) {
       const { eventEl, onScroll } = el[scrollSpyContext]
       eventEl.removeEventListener('scroll', onScroll)
+    },
+    getSSRProps (binding, vnode) {
+      return {}
     }
   })
 
   app.directive('scroll-spy-active', {
     created: scrollSpyActive,
-    updated: scrollSpyActive
+    updated: scrollSpyActive,
+    getSSRProps (binding, vnode) {
+      return {}
+    }
   })
 
   app.directive('scroll-spy-link', {
@@ -220,6 +226,9 @@ const registerScrollSpy = (
           delete linkElement[scrollSpyContext]['click']
         }
       }
+    },
+    getSSRProps (binding, vnode) {
+      return {}
     }
   })
 
